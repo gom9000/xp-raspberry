@@ -5,6 +5,7 @@ RaspberryPi hardware interfacing experiences for home learning.
 
 
 ## Experiences
+- [quadrature-encoder](quadrature-encoder/) - read and count encoded signals from 3-pin incremental rotary encoder.
 
 
 ## Changes
