@@ -5,6 +5,7 @@ RaspberryPi hardware interfacing experiences for home learning.
 
 
 ## Experiences
+- [serial-to-parallel-output](serial-to-parallel-output) - serial-to-parallel output through shift registers
 - [quadrature-encoder](quadrature-encoder/) - read and count encoded signals from 3-pin incremental rotary encoder.
 
 
