@@ -2,6 +2,10 @@
 This file contains the log of changes of **RaspberryPI** eXPerience.
 
 
+## 0.3.0 2022-03-20 New eXPerience release
+- Added Parallel-to-serial input through shift registers experience
+
+
 ## 0.2.0 2022-03-15 New eXPerience release
 - Added Serial-to-parallel output through shift registers experience
 
