@@ -14,4 +14,4 @@ Read and count encoded signals from 3-pin incremental rotary encoder.
 
 
 ## Schematic
-![schematic](experience-schematic.jpg)
+![schematic](experience-sch.jpg)
