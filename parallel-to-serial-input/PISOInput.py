@@ -51,16 +51,15 @@ class PISOInput:
     # Read data from registers
     # ------------------------------------------------------------------------
     def read(self):
-	    data = 0
-	    GPIO.output(self.latch_pin, GPIO.LOW)
-        for ii in range(16):
-		    databit = GPIO.input(self.data_pin)
-            data += databit&int(math.pow(2, ii))
+        data = 0
+        self.__pulse(self.latch_pin, GPIO.LOW)
+        for ii in range(16, 0, -1):
+            databit = GPIO.input(self.data_pin)
+            print ("PISO Input: i%d %d"% (ii, databit))
+            data += databit*int(math.pow(2, ii-1))
             self.__pulse(self.clock_pin)
 
-		GPIO.output(self.latch_pin, GPIO.HIGH)
-
-		return data
+        return data
 
 
 
@@ -70,8 +69,10 @@ class PISOInput:
 # ----------------------------------------------------------------------------
 try:
     module = PISOInput(17, 18, 22)
-    while True:
-        print ("PISO Input: %d"% (module.read()))
-        sleep(0.01)
+#    while True:
+#        print ("PISO Input: %d"% (module.read()))
+#        sleep(0.01)
+    print ("PISO Input: %d"% (module.read()))
 except KeyboardInterrupt:
     GPIO.cleanup()
+
