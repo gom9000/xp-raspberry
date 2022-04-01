@@ -2,8 +2,11 @@
 This file contains the todo list of **RaspberryPI** eXPerience.
 
 
-## Next Tasks
+## Done Tasks
 - [x] Quadrature Encoder experience
 - [x] Serial-to-parallel output throught shift registers experience
 - [x] Parallel-to-serial input throught shift registers experience
-- [ ] Serial MIDI In-Out interface experience
+- [x] Serial MIDI In-Out interface experience
+
+
+## Next Tasks
