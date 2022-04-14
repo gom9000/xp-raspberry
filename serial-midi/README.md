@@ -23,4 +23,7 @@ Change from **raspi-config** menu: Interfacing Options
 
 
 ## Schematic
-![schematic](serial-midi-sch.jpg)
+none
+
+## Bill of Materials
+- [x] module board [mob-if-midi](https://github.com/gom9000/xp-mobs-library/tree/master/mobs/mob-if-midi)  from *xp-mobs-library* repository
