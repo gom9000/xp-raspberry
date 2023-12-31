@@ -19,7 +19,7 @@ Read and count encoded signals from 3-pin incremental rotary encoder.
 #### quadruple evaluation:
         (A != A-1) AND (B != A) -> +1
         (A != A-1) AND (B == A) -> -1
-		(A == A-1) AND (B != B-1) AND (B != A) -> -1
+        (A == A-1) AND (B != B-1) AND (B != A) -> -1
         (A == A-1) AND (B != B-1) AND (B == A) -> +1
 
 
