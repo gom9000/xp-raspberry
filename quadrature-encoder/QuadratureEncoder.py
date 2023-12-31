@@ -52,7 +52,7 @@ class QuadratureEncoder:
     # ------------------------------------------------------------------------
     def getPositionCounter(self):
         self.__read()
-        self.__decode()
+        self.__decode2x()
 
         return self.positionCounter
 
@@ -66,27 +66,44 @@ class QuadratureEncoder:
 
 
     # ------------------------------------------------------------------------
-    # Decode and count the encoder signals state
+    # Decode and count the encoder signals state (double evaluation)
     # ------------------------------------------------------------------------
-    def __decode(self):
+    def __decode2x(self):
         if self.AState != self.ALastState:
             if self.BState != self.AState:
                 self.positionCounter += 1
             else:
                 self.positionCounter -= 1
-        self.ALastState = self.AState
+            self.ALastState = self.AState
 
 
+    # ------------------------------------------------------------------------
+    # Decode and count the encoder signals state (quadruple evaluation)
+    # ------------------------------------------------------------------------
+    def __decode4x(self):
+        if self.AState != self.ALastState:
+            if self.BState != self.AState:
+                self.positionCounter += 1
+            else:
+                self.positionCounter -= 1
+            self.ALastState = self.AState
+        else:
+            if self.BState != self.BLastState:
+                if self.BState != self.AState:
+                    self.positionCounter -= 1
+                else:
+                    self.positionCounter += 1
+                self.BLastState = self.BState
 
 
 # ----------------------------------------------------------------------------
 # Test
 # ----------------------------------------------------------------------------
 try:
-    module = QuadratureEncoder(17,18)
+    module = QuadratureEncoder(23,24)
     module.setPositionCounter(0)
     while True:
         print ("Quadrature Encoder value: %d"% (module.getPositionCounter()))
-        sleep(0.01)
+        sleep(0.001)
 except KeyboardInterrupt:
     GPIO.cleanup()
